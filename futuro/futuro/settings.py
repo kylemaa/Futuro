@@ -38,8 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+     'restembed.core',
+     'rest_framework',
 
+]
+# Template directory setting
+TEMPLATE_DIRS = (
+                 os.path.join(os.path.dirname(__file__), 'templates'),
+                 )
+
+EMBEDLY_KEY = '<your key>'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
