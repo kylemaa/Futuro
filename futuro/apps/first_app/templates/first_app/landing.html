@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+		<title>Futuro</title>
+	</head>
+	<body>
+		{% if messages %}
+		    <ul class="messages">
+		        {% for message in messages %}
+		        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+		        {% endfor %}
+		    </ul>
+		{% endif %}
 
-<form action='/login' method = 'post'>
-	{% csrf_token %}
-	<p> Username: <input type="text" name="name"></p>
-	<p> Password: <input type="text" name="pass"></p>
-	<input type="submit" value = "Login">
-</form>
 
-<form action='/registration' method = 'post'>
-	{% csrf_token %}
-	<p> Name: <input type="text" name="name"></p>
-	<p> Username: <input type="text" name="username"></p>
-	<p> Email: <input type="text" name="email"></p>
-	<p> Password: <input type="text" name="pass"></p>
-	<input type="submit" value = "Register">
-</form>
+		<form class="field is-grouped" action='/login' method = 'post'>
+			{% csrf_token %}
+			<div class="field">
+				<div class="field-body">
+				  <div class="field">
+				    <p class="control is-expanded">
+				      <label class="label">Username</label>
+				      <input class="input" type="text" name="name" placeholder="Type Your Username">
+				     </p>
+				     <p class="control is-expanded"> 
+				     	<label class="label">Password</label>
+				     	<input class="input" type="text" name="Pass" placeholder="Type Your Password">
+				     </p>
+				     <input type="submit" value = "Login">
+				  </div> 
+			 </div>
+		</form>
 
-<form action= '/delete' method = 'post'>
-{% csrf_token %}
-{% for member in members %}
-<p>username:{{member.username}}  pass:{{member.password}}</p>
-<button type="submit">Delete</button>
-<input type="hidden" name="user" value= {{member.username}}>
-{% endfor %}
-</form>
+		<form action='/registration' method = 'post'>
+			{% csrf_token %}
+			<p> Name: <input type="text" name="name"></p>
+			<p> Username: <input type="text" name="username"></p>
+			<p> Email: <input type="text" name="email"></p>
+			<p> Password: <input type="text" name="pass"></p>
+			<input type="submit" value = "Register">
+		</form>
 
-</body>
+		<form action= '/delete' method = 'post'>
+			{% csrf_token %}
+			{% for member in members %}
+				<p>username:{{member.username}}  pass:{{member.password}}</p>
+				<button type="submit">Delete</button>
+				<input type="hidden" name="user" value= {{member.username}}>
+			{% endfor %}
+		</form>
+	</body>
 </html>
