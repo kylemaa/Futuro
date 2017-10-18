@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -41,12 +41,29 @@
           <p>
           	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et egestas velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam posuere accumsan lacus, quis aliquam erat fermentum ac. Sed et condimentum risus, a pellentesque nulla. Aenean dignissim ornare nunc, quis vulputate felis cursus sit amet. Nunc viverra, nulla vitae accumsan aliquet, massa magna luctus lacus, vel luctus odio nunc lobortis justo. Nam sit amet dolor at orci feugiat ultrices eu sed mauris. Mauris sit amet ex sed velit eleifend lacinia at in elit. Morbi feugiat ligula suscipit urna placerat ultrices. Cras vitae scelerisque enim.
           </p>
+          <nav aria-label="...">
+			  <ul class="pagination">
+			    <li class="page-item disabled">
+			      <span class="page-link">Previous</span>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item active">
+			      <span class="page-link">
+			        2
+			        <span class="sr-only">(current)</span>
+			      </span>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="#">Next</a>
+			    </li>
+			  </ul>
+		  </nav>
 		</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
   
