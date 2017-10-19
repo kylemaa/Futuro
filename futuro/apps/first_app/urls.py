@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from . import views
-
+from core.views import save_embed
 urlpatterns = [
 	url(r'^$',views.landing),
     url(r'^index$',views.index),
@@ -14,5 +14,6 @@ urlpatterns = [
 	url(r'^(?P<user_name>)/(?P<bakset_name>)$',views.viewbasket),
 	url(r'^deletebasket$',views.deletebasket),
 	url(r'^addbasket$',views.addbasket),
+    url(r'^', save_embed),
 
 ]
