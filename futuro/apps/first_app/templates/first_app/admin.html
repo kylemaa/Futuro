@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-
+<!Form to add a company>
 <form action='/addcompany' method = 'post'>
 	{% csrf_token %}
 	<p> Name: <input type="text" name="name"></p>
@@ -12,7 +12,7 @@
 	<p> Price per Share: <input type="text" name="price"></p>
 	<input type="submit" value = "Add Company">
 </form>
-
+<!Form to add delete a company>
 <form action= '/deletecompany' method = 'post'>
 {% csrf_token %}
 {% for company in companies %}
