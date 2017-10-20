@@ -14,7 +14,7 @@
 		    </ul>
 		{% endif %}
 
-
+<! Form for login in>
 		<form class="field is-grouped" action='/login' method = 'post'>
 			{% csrf_token %}
 			<div class="field">
@@ -41,7 +41,7 @@
 			<p> Password: <input type="text" name="pass"></p>
 			<input type="submit" value = "Register">
 		</form>
-
+<!Form to delete a user>
 		<form action= '/delete' method = 'post'>
 			{% csrf_token %}
 			{% for member in members %}
