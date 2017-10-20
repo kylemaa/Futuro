@@ -16,11 +16,11 @@ class UserManager(models.Manager):
 	def loginchecks(self,post):
 		errors = []
 		
-		if  (User.objects.filter(username=post['user_username'])) =={}:
+		if not (User.objects.filter(username=post['user_username'])) =={}:
 			errors.append("Username does not exist")
 			return {"succeed": False, "data": errors}
 		check=User.objects.filter(username=post['user_username']).filter(password = post['user_pass'])
-		if  check =={}:
+		if  not check =={}:
 			errors.append("Password did not match")
 			return {"succeed": False, "data": errors}
 		else:
